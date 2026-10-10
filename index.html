@@ -43,7 +43,7 @@
     .process{background:var(--soft)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}.step{padding:32px 36px 10px 0}.step+.step{padding-left:36px;border-left:1px solid var(--line)}.num{font-family:"Playfair Display",serif;font-size:3.4rem;color:var(--rose);line-height:1}.step h3{font-size:1.5rem;margin:18px 0 10px}.step p{color:var(--muted);margin:0}
     .quote-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}.quote-copy h2{font-size:clamp(3rem,5vw,5rem);letter-spacing:-.04em}.quote-copy p{color:var(--muted)}.contact-lines{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.contact-lines span{display:block;color:var(--muted);font-size:.8rem}.contact-lines a{font-weight:700;text-decoration:none}
     .demo-note{margin-top:18px;font-size:.78rem;color:var(--muted);background:var(--soft);padding:10px 12px}.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.8rem;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:13px 14px;border-radius:8px;outline:none}.field textarea{min-height:112px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--rose);box-shadow:0 0 0 3px color-mix(in srgb,var(--rose) 18%,transparent)}
-    .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.submit-row button{border:0;cursor:pointer}.status{font-size:.86rem;color:var(--muted);min-height:1.4em}
+    .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.submit-row button{border:0;cursor:pointer}.submit-row button:disabled{cursor:wait;opacity:.7}.status{font-size:.86rem;color:var(--muted);min-height:1.4em}
     footer{padding:32px clamp(20px,5vw,72px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.footer-links{display:flex;gap:18px}
     @media(max-width:900px){.nav a:not(.book){display:none}.hero{grid-template-columns:1fr;min-height:0;padding-top:54px}.hero-photo{max-width:650px}.hero-photo img{height:560px}.service-grid{grid-template-columns:1fr 1fr}.service:nth-child(2){border-right:0}.service:nth-child(3),.service:nth-child(4){border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)}.masonry{grid-template-columns:1fr 1fr}.mood:first-child{grid-row:auto}.mood:first-child img,.mood img{height:380px}.mood:nth-child(4){grid-column:1/-1}.quote-grid{grid-template-columns:1fr;gap:42px}}
     @media(max-width:600px){.nav{padding:10px 16px}.hero{padding:36px 20px 70px;gap:38px}.hero h1{font-size:3.5rem}.hero-photo img{height:455px;border-radius:44% 56% 49% 51% / 39% 42% 58% 61%}.photo-label{left:10px;bottom:16px}.hero-photo:before{right:-8px;width:105px;height:105px}.hero-photo:after{left:-5px;width:80px;height:80px}.section-head{display:block}.section-head h2{margin-bottom:18px}.service-grid,.steps,.masonry{grid-template-columns:1fr}.service,.service:not(:first-child){padding:28px 0;border-right:0;border-left:0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)}.service svg{margin-bottom:22px}.mood:first-child img,.mood img,.mood:nth-child(4) img{height:390px}.mood:nth-child(4){grid-column:auto}.steps{border-top:0}.step,.step+.step{padding:24px 0;border-left:0;border-top:1px solid var(--line)}.form{grid-template-columns:1fr}.field.full,.submit-row{grid-column:1}.button{justify-content:center}.actions{flex-direction:column;align-items:stretch}.quote-grid{gap:34px}footer{flex-direction:column}.footer-links{flex-wrap:wrap}}
@@ -107,16 +107,16 @@
     <section id="quote">
       <div class="wrap quote-grid">
         <div class="quote-copy">
-          <p class="eyebrow">Let’s celebrate</p><h2>Tell us what you’re dreaming up.</h2><p>Use the planner to create a ready-to-send event summary. We’ll use it to start your custom quote.</p>
+          <p class="eyebrow">Let’s celebrate</p><h2>Tell us what you’re dreaming up.</h2><p>Send your event details directly and we’ll use them to start your custom quote.</p>
           <div class="contact-lines"><span>Call or text</span><a href="tel:+15713385953">(571) 338-5953</a><br><br><span>Email</span><a href="mailto:Reddyjayasimha92@gmail.com">Reddyjayasimha92@gmail.com</a></div>
         </div>
         <form class="form" id="planner">
-          <div class="field"><label for="name">Your name</label><input id="name" autocomplete="name" placeholder="Name" /></div>
-          <div class="field"><label for="date">Event date</label><input id="date" type="date" /></div>
-          <div class="field"><label for="occasion">Occasion</label><select id="occasion"><option>Birthday</option><option>Baby shower</option><option>Engagement</option><option>Graduation</option><option>Anniversary</option><option>Other celebration</option></select></div>
-          <div class="field"><label for="guests">Estimated guests</label><input id="guests" type="number" min="1" inputmode="numeric" placeholder="40" /></div>
-          <div class="field full"><label for="details">Theme, colors &amp; must-haves</label><textarea id="details" placeholder="Example: sage and cream, organic balloon garland, round backdrop and cake plinths"></textarea></div>
-          <div class="submit-row"><button class="button primary" type="submit">Copy inquiry</button><span class="status" id="status" role="status" aria-live="polite"></span></div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="Name" autocomplete="name" placeholder="Name" /></div>
+          <div class="field"><label for="date">Event date</label><input id="date" name="Event date" type="date" /></div>
+          <div class="field"><label for="occasion">Occasion</label><select id="occasion" name="Occasion"><option>Birthday</option><option>Baby shower</option><option>Engagement</option><option>Graduation</option><option>Anniversary</option><option>Other celebration</option></select></div>
+          <div class="field"><label for="guests">Estimated guests</label><input id="guests" name="Estimated guests" type="number" min="1" inputmode="numeric" placeholder="40" /></div>
+          <div class="field full"><label for="details">Theme, colors &amp; must-haves</label><textarea id="details" name="Theme, colors &amp; must-haves" placeholder="Example: sage and cream, organic balloon garland, round backdrop and cake plinths"></textarea></div>
+          <div class="submit-row"><button class="button primary" type="submit">Send inquiry</button><span class="status" id="status" role="status" aria-live="polite"></span></div>
         </form>
       </div>
     </section>
@@ -125,13 +125,29 @@
 
   <script>
     (function(){
-      var form=document.getElementById('planner'), status=document.getElementById('status');
+      var form=document.getElementById('planner'), status=document.getElementById('status'), button=form.querySelector('button[type="submit"]');
       form.addEventListener('submit',function(e){
         e.preventDefault();
-        var text='Party decor inquiry\nName: '+(document.getElementById('name').value||'Not provided')+'\nEvent date: '+(document.getElementById('date').value||'Flexible')+'\nOccasion: '+document.getElementById('occasion').value+'\nEstimated guests: '+(document.getElementById('guests').value||'Not sure yet')+'\nTheme / details: '+(document.getElementById('details').value||'Open to ideas');
-        if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){status.textContent='Inquiry copied—paste it into a text or email.';}).catch(function(){fallback(text);});}else{fallback(text);}
+        button.disabled=true;
+        button.textContent='Sending…';
+        status.textContent='Sending your inquiry…';
+        fetch('https://formsubmit.co/ajax/Reddyjayasimha92@gmail.com',{
+          method:'POST',
+          headers:{'Accept':'application/json'},
+          body:new FormData(form)
+        }).then(function(response){
+          if(!response.ok){throw new Error('Submission failed');}
+          return response.json();
+        }).then(function(){
+          form.reset();
+          status.textContent='Thanks—your inquiry was sent successfully.';
+        }).catch(function(){
+          status.textContent='We couldn’t send your inquiry. Please email us directly at Reddyjayasimha92@gmail.com.';
+        }).finally(function(){
+          button.disabled=false;
+          button.textContent='Send inquiry';
+        });
       });
-      function fallback(text){var area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');status.textContent='Inquiry copied—paste it into a text or email.';}catch(err){status.textContent='Select the details above and send them by text or email.';}document.body.removeChild(area);}
     })();
   </script>
 </body>
